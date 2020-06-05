@@ -18,11 +18,14 @@ namespace RazorPagesUI.Pages
         }
 
         [BindProperty(SupportsGet = true)]
-        public string FirstName { get; set; }
+        public string City { get; set; }
 
         public void OnGet()
         {
-
+            if (string.IsNullOrWhiteSpace(City))
+            {
+                City = "The Web";
+            }
         }
     }
 }
